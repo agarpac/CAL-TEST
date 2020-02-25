@@ -40,6 +40,9 @@ pipeline {
             }
         }
         stage('Only PR') {
+            when{
+                changeRequest ()
+            }
             steps {
                 echo 'Ha tenido que entrar aquí solo si es un PR'
             }
