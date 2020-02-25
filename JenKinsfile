@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Always') {
+        stage('Always') { 
             steps {
                 echo 'Aqui va a entrar siempre... Hola mundo!'
             }
