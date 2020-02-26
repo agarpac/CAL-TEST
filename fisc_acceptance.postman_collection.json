@@ -1,0 +1,1431 @@
+{
+	"info": {
+		"_postman_id": "ea21c783-55f9-4046-93e0-540d376a0d29",
+		"name": "fisc_acceptance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "US-002 Method List Campaign Types",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be3b4ae5-3dd1-4ad7-815b-9baae144d1d9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"cmp_type_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_type_id\");",
+							"});",
+							"",
+							"pm.test(\"cmp_type_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_type_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"last_activity_date found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"last_activity_date\");",
+							"});",
+							"",
+							"pm.test(\"percentage_worked found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"percentage_worked\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"2\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/list_campaign_types/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"list_campaign_types",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-003 Method List Campaign by Type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d717caf6-a70f-4e8d-99de-ad606b0a40f5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"cmp_type_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_id\");",
+							"});",
+							"",
+							"pm.test(\"cmp_type_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"last_activity_date found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"last_activity_date\");",
+							"});",
+							"",
+							"pm.test(\"percentage_worked found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"percentage_worked\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\",\"cmp_type_id\":\"4\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/list_campaigns_by_type/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"list_campaigns_by_type",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-004 Method Campaign detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "011ca23d-66d9-4eef-96b0-18c8c763e1ed",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"cmp_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_id\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});",
+							"",
+							"pm.test(\"cmp_start_date found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_start_date\");",
+							"});",
+							"",
+							"pm.test(\"cmp_end_date found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_end_date\");",
+							"});",
+							"",
+							"pm.test(\"cmp_creator found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_creator\");",
+							"});",
+							"",
+							"pm.test(\"cmp_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_id\");",
+							"});",
+							"",
+							" "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\",\"cmp_id\":\"5\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_details/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_details",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-005 Method update campaign end_date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d834c0f1-1df0-4170-94d2-61a37f61acd5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"result found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"result\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cmp_id\":\"5\",\"cmp_end_date\":\"2018-10-12\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/change_end_date/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"change_end_date",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-006 Method campaign activity by type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1bbcea7-ba00-4d66-a113-b8c928ba27d4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"cmp_type_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_type_id\");",
+							"});",
+							"",
+							"pm.test(\"cmp_type_name\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_type_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_activity_by_type/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_activity_by_type",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-007 Campaign Type Activity by Dealer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c46d8acb-2d32-48ea-a709-3f9929c99bc7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"dealer_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealer_id\");",
+							"});",
+							"",
+							"pm.test(\"dealer_name\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealer_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\",\"cmp_type_id\":\"4\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_type_activity_by_dealer/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_type_activity_by_dealer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-008 Campaign Type Activity by Sales Exec",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d46297ad-4451-4ec2-bf67-9451d1a5619c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"user_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"user_id\");",
+							"});",
+							"",
+							"pm.test(\"user_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"user_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\",\"cmp_type\":\"4\",\"dealer_id\":\"7607\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_type_activity_by_salesexec/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_type_activity_by_salesexec",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-009 Campaign List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0929d89d-f903-455c-b530-7d1259968c03",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"cmp_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_id\");",
+							"});",
+							"",
+							"pm.test(\"cmp_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_list/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-010 Campaign by Dealer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d510d91-57b0-488a-813e-2878eb16835f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"dealer_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealer_id\");",
+							"});",
+							"",
+							"pm.test(\"dealer_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealer_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\",\"cmp_id\":\"81\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_by_dealer/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_by_dealer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-011  Campaign by Sales Exec TAB 2 – BY CAMPAIGN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"2\",\"cmp_id\":\"726\",\"dealer_id\":\"7620\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_by_salesexec/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_by_salesexec",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-012 Campaign List by Dealer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d510d91-57b0-488a-813e-2878eb16835f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"dealer_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealer_id\");",
+							"});",
+							"",
+							"pm.test(\"dealer_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealer_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"1\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_list_by_dealer/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_list_by_dealer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-013 Campaign List for Dealer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d510d91-57b0-488a-813e-2878eb16835f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"cmp_id found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_id\");",
+							"});",
+							"",
+							"pm.test(\"cmp_name found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"cmp_name\");",
+							"});",
+							"",
+							"pm.test(\"prospect_count found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"prospect_count\");",
+							"});",
+							"",
+							"pm.test(\"activity_data found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"activity_data\");",
+							"});",
+							"",
+							"pm.test(\"wip found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"wip\");",
+							"});",
+							"",
+							"pm.test(\"ns found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ns\");",
+							"});",
+							"",
+							"pm.test(\"dealt found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dealt\");",
+							"});",
+							"",
+							"pm.test(\"lost found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lost\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"2265\",\"dealer_id\":\"7592\"}\n"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_list_for_dealer/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_list_for_dealer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-014 Campaign by Sales Exec TAB 3 – BY DEALER ",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"dh_id\":\"2\",\"cmp_id\":\"726\",\"dealer_id\":\"7620\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/campaign_by_salesexec2/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"campaign_by_salesexec2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-015 Notification: SAVE DEVICE PUSH-TOKEN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "064e3902-a19f-4f23-a808-2d06263a38e1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"uss_device_push_token\":\"1234567890\",\"uss_device_push_token_type\":\"2\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/save_device_push_token/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"save_device_push_token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-016 Notification: PUSH NOTIFICATIONS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"notification_id\":\"2\"}"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/push_new_notification/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"push_new_notification",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-017 Notification: Get Notification Preferences",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/get_notification_preferences/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"get_notification_preferences",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US-018 update notification testing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d510d91-57b0-488a-813e-2878eb16835f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "OhCh4phu",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Bahx3gish1egh1ni",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "device_token",
+						"value": "7d4b48f1-1c47-4880-8e1d-eb787b6398ab"
+					},
+					{
+						"key": "session_token",
+						"value": "TxYkMhaqNIdM6yp2dJq2wA=="
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"notification_preferences\":\"[{'New Campaign': 0}, {'Deal Won': 1}]\"}\n"
+				},
+				"url": {
+					"raw": "https://qa-fisc-emaster-api.emergyalabs.com/update_notification_preferences/",
+					"protocol": "https",
+					"host": [
+						"qa-fisc-emaster-api",
+						"emergyalabs",
+						"com"
+					],
+					"path": [
+						"update_notification_preferences",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
