@@ -22,6 +22,12 @@ pipeline {
             when{
                 branch 'master'
             }
+            input {
+                message "Should we continue?"
+                parameters {
+                    choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Deploy Master branch?')
+                }
+            }
             steps {
                 echo 'Ha tenido que entrar aquí solo al ser rama master'
             }
