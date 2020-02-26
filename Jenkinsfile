@@ -28,7 +28,7 @@ pipeline {
                     def INPUT_PARAMS = input message: 'Should we continue?', ok: 'Next',
                                        parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
                 
-                    if (env.deployMaster == 'yes') {
+                    if (${deployMaster} == 'yes') {
                         echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
                     }
                 }
