@@ -7,28 +7,15 @@ pipeline {
                 echo 'Aqui va a entrar siempre... Hola mundo!'
             }
         }
-        stage('Branch testSonar or PR') {
+        stage('Branch develop or PR') {
             when {
                 anyOf { 
-                    branch 'testSonar'
-                    //expression { env.BUILDCAUSE =~ /.*PR.*/ }
-                    changeRequest ()
-                    //allOf{
-                        //changeRequest () ; 
-                        //expression { return (GIT_BRANCH != 'origin/testAgarrido') }
-                    //}
+                    branch 'develop'
+                    changeRequest target: 'develop'
                 }
             }
             steps {
-                echo 'Aqui debe entrar si es rama testSonar o un PR!'
-            }
-        }
-        stage('Only Branch testSonar') {
-            when{
-                branch 'testSonar'
-            }
-            steps {
-                echo 'Ha tenido que entrar aquí solo por ser rama testSonar'
+                echo 'Aqui debe entrar si es rama develop o un PR!'
             }
         }
         stage('Only Branch Master') {
@@ -41,10 +28,11 @@ pipeline {
         }
         stage('Only PR') {
             when{
-                changeRequest () 
+                changeRequest target: 'develop' 
             }
             steps {
                 echo 'Ha tenido que entrar aquí solo si es un PR'
+                echo 'Postman - Newman'
             }
         }
     }
