@@ -26,9 +26,11 @@ pipeline {
                 script {
                 // Show the select input modal
                 def INPUT_PARAMS = input message: 'Should we continue?', ok: 'Next',
-                                    parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Deploy Master branch?')]
+                                   parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
                 }
-                echo 'Ha tenido que entrar aquí solo al ser rama master'
+                if (env.deployMaster == 'yes') {
+                    echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
+                }
             }
         }
         stage('Only PR') {
