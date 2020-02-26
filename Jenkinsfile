@@ -24,12 +24,13 @@ pipeline {
             }
             steps {
                 script {
-                // Show the select input modal
-                def INPUT_PARAMS = input message: 'Should we continue?', ok: 'Next',
-                                   parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
-                }
-                if (env.deployMaster == 'yes') {
-                    echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
+                    // Show the select input modal
+                    def INPUT_PARAMS = input message: 'Should we continue?', ok: 'Next',
+                                       parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
+                
+                    if (env.deployMaster == 'yes') {
+                        echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
+                    }
                 }
             }
         }
