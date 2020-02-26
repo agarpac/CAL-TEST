@@ -23,11 +23,10 @@ pipeline {
                 branch 'master'
             }
             steps {
-                input {
-                message "Should we continue?"
-                parameters {
-                    choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Deploy Master branch?')
-                    }
+                script {
+                // Show the select input modal
+                def INPUT_PARAMS = input message: 'Should we continue?', ok: 'Next',
+                                    parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Deploy Master branch?')]
                 }
                 echo 'Ha tenido que entrar aquí solo al ser rama master'
             }
