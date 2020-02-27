@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Show the select input modal
-                    def INPUT_PARAMS = input message: 'Should we continue?', ok: 'Next',
+                    def INPUT_PARAMS = input message: 'Should we continue?',
                                        parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
                 
                     if ('${deployMaster}' == 'yes') {
