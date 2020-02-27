@@ -24,7 +24,9 @@ pipeline {
             }
             steps {
                 milestone(1)
-                input 'Master deploy, are you sure?'
+                timeout(time: 5, unit: 'MINUTES') {
+                    input 'Master deploy, are you sure?'
+                }
                 milestone(2)
                 script {
                     echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage' 
