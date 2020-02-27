@@ -27,7 +27,7 @@ pipeline {
                     // Show the select input modal
                     def INPUT_PARAMS = input message: 'Should we continue?',
                                        parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
-                
+                    sh "printenv"
                     if ('${deployMaster}' == 'yes') {
                         echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
                     }
