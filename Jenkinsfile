@@ -31,6 +31,9 @@ pipeline {
                     if ('${deployMaster}' == 'yes') {
                         echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
                     }
+                    if ('${params.deployMaster}' == 'yes') {
+                        echo '2Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
+                    }
                 }
             }
         }
