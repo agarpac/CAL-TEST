@@ -23,18 +23,11 @@ pipeline {
                 branch 'master'
             }
             steps {
+                milestone(1)
+                input 'Master deploy, are you sure?'
+                milestone(2)
                 script {
-                    // Show the select input modal
-                    def INPUT_PARAMS = input message: 'Should we continue?',
-                                       parameters: [choice(name: 'deployMaster', choices: ['no', 'yes'], description: 'Choose an option and continue')]
-                    sh "printenv"
-                    echo "${deployMaster}"
-                    if ('${deployMaster}' == 'yes') {
-                        echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
-                    }
-                    if ('${params.deployMaster}' == 'yes') {
-                        echo '2Ha tenido que entrar aquí solo al ser rama master y confirmando el stage'
-                    }
+                    echo 'Ha tenido que entrar aquí solo al ser rama master y confirmando el stage' 
                 }
             }
         }
